@@ -5,7 +5,7 @@ width: small
 ---
 
 <div class="tm-timeline uk-margin-large-top">
-    <p>This is the master timeline with a quick add above, a <a href="javascript:void(window.open('https://github.com/kinlane/timeline/issues/new?labels=timeline&title=%27+encodeURIComponent(document.title)+%27&body=%27+getSelection().toString()+%27%20~%20%27+encodeURIComponent(location.href)));">Timeline</a> bookmarklet you can drag to your toolbar, or you can checkout the repo and add to the timeline.yml</a>.
+    <p>This is the master timeline with a quick add above, a <a href="javascript:void(window.open('https://github.com/kinlane/timeline/issues/new?labels=timeline&title=%27+encodeURIComponent(document.title)+%27&body=%27+getSelection().toString()+%27%20~%20%27+encodeURIComponent(location.href)));">Timeline</a> bookmarklet you can drag to your toolbar, or you can checkout the repo and add to the <a href="https://github.com/kinlane/timeline/blob/main/_data/timeline.yml" target="_blank">timeline.yml</a>.
     {% for version in site.data.timeline %}
     <div class="tm-timeline-entry">
         <div class="tm-timeline-time">
