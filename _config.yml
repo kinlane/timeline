@@ -1,0 +1,129 @@
+title:              API Evangelist
+description:        Making sense of the technology, business, and politics of APIs that is impact all stages of our physical and digital worlds.
+lang:               en
+
+# Site subpath, e.g. /blog
+baseurl:            ""
+
+# Permalink URLs structure, for permalink style options see: https://jekyllrb.com/docs/permalinks/
+permalink: /:categories/:year/:month/:day/:title/
+
+# Site base hostname & protocol, e.g. http://example.com
+url:                "https://apievangelist.com"
+
+# Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
+logo:               https://kinlane-productions2.s3.amazonaws.com/api-evangelist-logos/api-evangelist-logo-butterfly.png
+
+navbar:
+    sticky:         true
+    search:         true
+  
+# Default author settings
+author:
+    name:           Kin Lane
+    title:          Chief Evangelist
+    avatar:         https://kinlane-productions2.s3.amazonaws.com/kin-lane/kin-lane-cartoon-questioning.png
+
+# Author settings, displayed on post and doc pages if front matter references author name e.g. author: peter
+authors:
+    kin:
+      name:         Kin Lane
+      title:        API Evangelist
+      avatar:       https://kinlane-productions2.s3.amazonaws.com/kin-lane/kin-lane-cartoon-questioning.png
+      email:       'kinlane@postman.com'
+      affiliation: 'API Evangelist'
+      github:      'kinlane'
+      linkedin:    'in/kinlane'    
+    pascal:
+      name:         Pascal Heus
+      title:        Lead Data  
+      avatar:       https://res.cloudinary.com/postman/image/upload/t_user_profile_300/v1615306165/user/ywbewk7zn4bbrprzkjga.png
+      email:       'pascal.heus@postman.com'
+      affiliation: 'Postman Open Technologies'
+      github:      'kulnor'
+      linkedin:    'in/pascal'
+      twitter:     'PascalHeus'      
+
+# Social icons displayed in footer
+social:
+    email:
+    website:
+    facebook:       
+    flickr:
+    dribbble:
+    github:         https://github.com/api-evangelist
+    googleplus:
+    instagram:     
+    linkedin:       https://www.linkedin.com/in/kinlane/
+    pinterest:
+    twitter:        
+    vimeo:          
+    youtube:        https://www.youtube.com/c/KinLane
+    mastodon:       
+
+# Share button
+share:
+    post:           true # Display share buttons on a post page
+    doc:            true # Display share buttons on a doc page
+    twitter:        username # Enable by adding Twitter handle 
+    facebook:       true # Enable by setting true (Facebook handle not required)
+
+# Default footer image settings
+footer:
+    copyright:      API Evangelist
+
+# Disqus comments shortname, requires Disqus account https://disqus.com/
+disqus:
+    shortname:      # 1234
+
+# Google analytics code, get your code here https://www.google.com/analytics/
+google_analytics: UA-1119465-51
+
+# Number of posts displayed on blog page
+paginate:           25
+
+# Blog path
+paginate_path:      "/blog/:num/"
+
+# Path to post content assets directory i.e post images, pdfs etc
+uploads:            /uploads/
+
+# Build settings
+markdown:           kramdown
+highlighter:        rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-gist
+  - jekyll-avatar
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+
+sass:
+  style:            compressed
+
+collections:
+  info:
+    output:         true
+  faqs:
+    output:         false
+  timeline:
+    output:         false
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path:         ""
+      type:         posts
+    values:
+      layout:       post
+  # _info
+  - scope:
+      path:         ""
+      type:         info
+    values:
+      layout:       info

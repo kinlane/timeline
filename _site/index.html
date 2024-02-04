@@ -1,0 +1,3894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>The Timeline | API Evangelist</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="The Timeline" />
+<meta name="author" content="Kin Lane" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Making sense of the technology, business, and politics of APIs that is impact all stages of our physical and digital worlds." />
+<meta property="og:description" content="Making sense of the technology, business, and politics of APIs that is impact all stages of our physical and digital worlds." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="API Evangelist" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="The Timeline" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Kin Lane"},"description":"Making sense of the technology, business, and politics of APIs that is impact all stages of our physical and digital worlds.","headline":"The Timeline","name":"API Evangelist","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://kinlane-productions2.s3.amazonaws.com/api-evangelist-logos/api-evangelist-logo-butterfly.png"},"name":"Kin Lane"},"url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist" href="/feed.xml">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+
+  <script src="/assets/js/main.js"></script>
+
+  
+    <script>
+function searchResults(form) {
+
+    var currentItem = null;
+    var search = document.getElementById(form);
+    var results = document.getElementById(form + "-results");
+    var toggle = document.getElementById(form + "-toggle");
+
+    function removeActive() {
+        for (i = 0; i < results.children.length; i++) {
+            results.children[i].classList.remove("uk-background-muted");
+        }
+    }
+
+    // Detect all clicks on the document
+    document.addEventListener("click", function(event) {
+
+        var isClickSearch = false;
+        var isClickResults = false;
+        var isClickSearchToggle = false;
+
+        if (search !== null) {
+            isClickSearch = search.contains(event.target);
+        }
+
+        if (results !== null) {
+            isClickResults = results.contains(event.target);
+        }
+
+        if (toggle !== null) {
+            isClickSearchToggle = toggle.contains(event.target);
+        }
+
+        if (isClickSearch || isClickSearchToggle) {
+            results.style.display = "block";
+        }        
+
+        if (!isClickResults && !isClickSearch && !isClickSearchToggle) {
+            results.style.display = "none";
+        }        
+        
+    });    
+
+    results.addEventListener("mouseover", function(event) {
+
+        removeActive();
+        event.target.parentElement.classList.add("uk-background-muted");
+        currentItem = null;
+
+    });
+
+    results.addEventListener("mouseout", function(event) {
+        event.target.parentElement.classList.remove("uk-background-muted");
+    });
+
+
+    search.addEventListener("keyup", function(event) {
+
+        var resultItems = results.children;
+        var resultCount = results.children.length;
+                                
+        if (event.keyCode === 40) {
+
+            if (currentItem < (resultCount - 1)) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem++;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+            
+        } else if (event.keyCode === 38) {
+
+            if (currentItem > 0) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem--;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+
+        } else if (event.keyCode === 13) {
+
+            resultItems[currentItem].children[0].click();
+
+        }
+
+    });
+
+}
+</script>
+  
+  
+  
+  
+    
+
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Timeline by The API Evangelist">
+  <meta property="og:site_name" content="API Evangelist">
+  <meta property="og:description" content="Making sense of the technology, business, and politics of APIs that is impact all stages of our physical and digital worlds.">
+  <meta property="og:image"  content="">
+
+  <meta name="twitter:url" content="">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Timeline by The API Evangelist">
+  <meta name="twitter:site" content="API Evangelist">
+  <meta name="twitter:description" content="Making sense of the technology, business, and politics of APIs that is impact all stages of our physical and digital worlds.">
+
+  
+  
+  <meta name="twitter:image" content="">
+
+  <script src="/assets/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+
+<body>
+  
+</head>
+
+    
+        <div data-uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
+    <nav class="uk-navbar-container">
+        <div class="uk-container">
+            <div data-uk-navbar>
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo uk-visible@m" href="/"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-logos/api-evangelist-logo-butterfly.png" alt="API Evangelist" width="300"></a>
+                    
+                        <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas-docs" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Docs</span></a>
+                    
+
+                    <ul class="uk-navbar-nav uk-visible@m">
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li class="uk-active"><a href="/" >Home</a></li>
+                                                                                                        
+                                
+                            
+                        
+                            
+                            
+                            
+                                
+                                    
+                                        <li><a href="https://github.com/kinlane/timeline/issues/new?labels=timeline&title=New+Timeline&body=The%20description%20of%20the%20entry.%20~%20https://example.com" target="_blank" >Quick Add</a></li>
+                                                                                                        
+                                
+                            
+                        
+                    </ul>
+                </div>
+                <div class="uk-navbar-center uk-hidden@m">
+                    <a class="uk-navbar-item uk-logo" href="/"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-logos/api-evangelist-logo-butterfly.png" alt="API Evangelist"></a>
+                </div>
+                <div class="uk-navbar-right">
+                    
+                        
+                            <div>
+                                <a id="search-navbar-toggle" class="uk-navbar-toggle" uk-search-icon href="#"></a>
+                                <div class="uk-drop uk-background-default uk-border-rounded" uk-drop="mode: click; pos: left-center; offset: 0">
+                                    <form class="uk-search uk-search-navbar uk-width-1-1" onsubmit="return false;">
+                                        <input id="search-navbar" class="uk-search-input" type="search" placeholder="Search for answers" autofocus autocomplete="off">
+                                    </form>
+                                    <ul id="search-navbar-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
+                                </div>
+                            </div>
+                            <script>
+                            SimpleJekyllSearch({
+                                searchInput: document.getElementById('search-navbar'),
+                                resultsContainer: document.getElementById('search-navbar-results'),
+                                noResultsText: '<li class="no-results">No results found</li>',
+                                searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+                                json: "/search.json"
+                            });
+                            searchResults("search-navbar");
+                            </script>
+                        
+                    
+
+                    <ul class="uk-navbar-nav uk-visible@m">
+                        
+                            
+                            
+                            
+                                
+                                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-success" href="/contact/" >Reach Out</a></div></li>
+                                
+                            
+                        
+                    </ul>
+
+                    
+                        <a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span></a>
+                    
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+    
+
+    <style>
+        ul{
+            padding: 10px 25px 25px 25px;
+            margin: 10px 25px 25px 25px;
+        }
+    </style>
+
+    
+<div class="uk-section">
+    <div class="uk-container uk-container-small">
+
+        <article class="uk-article">
+
+            <h1 class="uk-article-title">The Timeline</h1>
+
+            <div class="article-content link-primary">
+                <div class="tm-timeline uk-margin-large-top">
+    <p>This is the master timeline with a quick add above, a <a href="javascript:void(window.open('https://github.com/kinlane/timeline/issues/new?labels=timeline&amp;title=%27+encodeURIComponent(document.title)+%27&amp;body=%27+getSelection().toString()+%27%20~%20%27+encodeURIComponent(location.href)));">Timeline</a> bookmarklet you can drag to your toolbar, or you can checkout the repo and add to the timeline.yml&lt;/a&gt;.
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1753</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Charles Morrison Says Electricity Can Transmit Messages<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1753</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Electrostatic Telegraph<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1770</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Music box<span class="uk-label uk-margin-small-left">Music</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1775</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Electric Telegraph<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1790</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Barrel Organ<span class="uk-label uk-margin-small-left">Music</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1801</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Loom<span class="uk-label uk-margin-small-left">Weaving</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1804</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Electrochemical Telegraph<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1805</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Barrel Piano<span class="uk-label uk-margin-small-left">Music</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1816</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">First Working Telegraph<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1822</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Charles Babbage takes first steps in the construction of machines that would compute numbers<span class="uk-label uk-margin-small-left">Compute</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1822</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Steam Calculator<span class="uk-label uk-margin-small-left">Calculator</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1830</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Steam Locomotive<span class="uk-label uk-margin-small-left">Railroad</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1837</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Charles Babbage published a paper describing a mechanical computer that is now known as the Analytical Engine<span class="uk-label uk-margin-small-left">Compute</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1839</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">First Commercial Telegraph (Railway)<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1842</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Punch Tape Player Pianos<span class="uk-label uk-margin-small-left">Music</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1843</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Ada Lovelace first describes what is known as a computer and its software<span class="uk-label uk-margin-small-left">Compute</span><span class="uk-label uk-margin-small-left">Software</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1844</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">First Long Distance Telegraph Message<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1844</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Innocenzo Manzetti Modeled Speaking Telegraph<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1846</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Punch Tape Telegrams<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1846</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Printing Telegraph<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1847</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Paper Roll Traveling Valve Reed Organ<span class="uk-label uk-margin-small-left">Music</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1851</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Morse Code<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1854</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Principes of the Telephone<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1860</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Panetelegraph<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1861</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">First Speech-Transmitting Telephone<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1862</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">The Pacific Railroad Acts<span class="uk-label uk-margin-small-left">Railroad</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1862</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">The Pacific Railroad Acts (Amendments)<span class="uk-label uk-margin-small-left">Railroad</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1871</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Intent to Invent Sound Telegraph<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1876</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Bell Patents Telephone<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1876</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Bell sends “Mr. Watson, come here! I want to see you!”<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1877</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">First Telephone Exchange in Boston<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1877</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">First long-distance telephone line<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1878</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Thurman Act<span class="uk-label uk-margin-small-left">Railroad</span><span class="uk-label uk-margin-small-left">Regulation</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1880</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Scanning Phototelegraph<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1887</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Multiplex Switchboard<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1887</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Interstate Commerce Act<span class="uk-label uk-margin-small-left">Railroad</span><span class="uk-label uk-margin-small-left">Regulation</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1888</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Telautograph<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1888</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Hertz Detects Radio Waves<span class="uk-label uk-margin-small-left">Radio</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1890</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Punch Cards<span class="uk-label uk-margin-small-left">Data</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1899</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Marconi Establishes Radio Link Between England and France<span class="uk-label uk-margin-small-left">Radio</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1904</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">First Radio Transmission of Music<span class="uk-label uk-margin-small-left">Radio</span><span class="uk-label uk-margin-small-left">Music</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1906</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">First Radio Program of Voice and Music in US<span class="uk-label uk-margin-small-left">Radio</span><span class="uk-label uk-margin-small-left">Music</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1906</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">The Hepburn Act<span class="uk-label uk-margin-small-left">Railroad</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1908</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Radiofax<span class="uk-label uk-margin-small-left">Communication</span><span class="uk-label uk-margin-small-left">Radio</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1910</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">The Mann–Elkins Act<span class="uk-label uk-margin-small-left">Railroad</span><span class="uk-label uk-margin-small-left">Telecommunications</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1911</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">IBM</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1912</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">The Radio Act of 1912<span class="uk-label uk-margin-small-left">Radio</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1913</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">The Kingsbury Commitment<span class="uk-label uk-margin-small-left">Telecommunications</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1914</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">WWI<span class="uk-label uk-margin-small-left">Military</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1919</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">ShortWave Radio<span class="uk-label uk-margin-small-left">Communication</span><span class="uk-label uk-margin-small-left">Radio</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1920</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">The Federal Power Act<span class="uk-label uk-margin-small-left">Electricity</span><span class="uk-label uk-margin-small-left">Regulation</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1921</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Willis Graham Act<span class="uk-label uk-margin-small-left">Telecommunications</span><span class="uk-label uk-margin-small-left">Regulations</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1921</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Shreveport Rate Cases<span class="uk-label uk-margin-small-left">Railroads</span><span class="uk-label uk-margin-small-left">Telecommunications</span><span class="uk-label uk-margin-small-left">Regulation</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1927</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">First Transatlantic Telephone Call<span class="uk-label uk-margin-small-left">Communication</span><span class="uk-label uk-margin-small-left">Telecommunications</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1927</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">The Radio Act of 1927<span class="uk-label uk-margin-small-left">Radio</span><span class="uk-label uk-margin-small-left">Regulation</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1930</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Smith v. Illinois Bell Telephone Co., 282 U.S. 133<span class="uk-label uk-margin-small-left">Telecommunications</span><span class="uk-label uk-margin-small-left">Regulation</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1932</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Drum Memory<span class="uk-label uk-margin-small-left">Data</span><span class="uk-label uk-margin-small-left">Storage</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1933</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Telex Messaging<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1934</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">The Communications Act of 1934<span class="uk-label uk-margin-small-left">Telecommunications</span><span class="uk-label uk-margin-small-left">Regulation</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1934</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">FCC Founded<span class="uk-label uk-margin-small-left">Government</span><span class="uk-label uk-margin-small-left">Regulation</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1935</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">FM Radio<span class="uk-label uk-margin-small-left">Radio</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1935</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Public Utility Holding Company Act<span class="uk-label uk-margin-small-left">Electricity</span><span class="uk-label uk-margin-small-left">Regulation</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1936</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Turing Machine<span class="uk-label uk-margin-small-left">Compute</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1937</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Harvard Mark 1<span class="uk-label uk-margin-small-left">Compute</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1939</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Hewlett Packard<span class="uk-label uk-margin-small-left">Compute</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1939</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">WWII<span class="uk-label uk-margin-small-left">Military</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1941</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Store Information In Memory<span class="uk-label uk-margin-small-left">Storage</span><span class="uk-label uk-margin-small-left">Memory</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1943</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">ENIAC<span class="uk-label uk-margin-small-left">Compute</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1946</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">UNIVAC<span class="uk-label uk-margin-small-left">Compute</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1947</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Transistor<span class="uk-label uk-margin-small-left">Compute</span><span class="uk-label uk-margin-small-left">Electronic</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1948</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Mathematical Theory of Communication<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1949</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">FCC Fairness Doctrine<span class="uk-label uk-margin-small-left">Radio</span><span class="uk-label uk-margin-small-left">Regulation</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1949</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Memex (Linked Documents)<span class="uk-label uk-margin-small-left">Documents</span><span class="uk-label uk-margin-small-left">Links</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1949</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Computer Talks Over Phone<span class="uk-label uk-margin-small-left">Communication</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1949</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">The U.S. vs. Western Union Lawsuit<span class="uk-label uk-margin-small-left">Telecommunications</span><span class="uk-label uk-margin-small-left">Regulation</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1953</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">COBOL<span class="uk-label uk-margin-small-left">Software</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1954</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">FORTRAN<span class="uk-label uk-margin-small-left">Software</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1957</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Sputnik<span class="uk-label uk-margin-small-left">Space</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1958</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Digital Phone Lines<span class="uk-label uk-margin-small-left">Telecommunications</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1958</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Integrated Circuit<span class="uk-label uk-margin-small-left">Software</span><span class="uk-label uk-margin-small-left">Electronics</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1959</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Semi-Automatic Ground Environment (SAGE) Wide Area Network<span class="uk-label uk-margin-small-left">Military</span><span class="uk-label uk-margin-small-left">Networks</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1960</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Object Oriented Programming<span class="uk-label uk-margin-small-left">Software</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1961</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Computer Time Sharing<span class="uk-label uk-margin-small-left">Cloud</span><span class="uk-label uk-margin-small-left">Software</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1962</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Telstar satellite transmits the first TV picture<span class="uk-label uk-margin-small-left">Satellite</span><span class="uk-label uk-margin-small-left">Television</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1962</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Database<span class="uk-label uk-margin-small-left">Data</span><span class="uk-label uk-margin-small-left">Storage</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1963</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Hypertext (Ted Nelson)<span class="uk-label uk-margin-small-left">Web</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1963</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Hypermedia (Ted Nelson)<span class="uk-label uk-margin-small-left">Web</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1964</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Mouse<span class="uk-label uk-margin-small-left">Devices</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1964</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">GUI<span class="uk-label uk-margin-small-left">Interfaces</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1964</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Electronic File System<span class="uk-label uk-margin-small-left">Storage</span><span class="uk-label uk-margin-small-left">Files</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1964</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Sync Satellite Television Network<span class="uk-label uk-margin-small-left">Satellites</span><span class="uk-label uk-margin-small-left">Television</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1964</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">IBM SABRE Reservation System<span class="uk-label uk-margin-small-left">Travel</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1965</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">CODASYL Database</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1966</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Xerox unveils the first fax machine</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1966</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Michigan Educational Research Information Triad (MERIT)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1967</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">First ATM is installed in London</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1967</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Melvin Conway introduces what is later called Conways Law</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1968</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Multiplexing</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1968</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">The Mother of All Demos by Douglas Engelbart</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1969</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">UNIX</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1969</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Moon Landing</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1969</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Mass produced software components By McIlroy, Malcolm Douglas</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1969</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Host Software The First RFC</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1969</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">ARPANET Four Initial Nodes Established</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1969</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Compuserve</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1970</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Intel</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1970</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">QUEL Query Language</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1970</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">DRAM</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1971</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Floppy Disk</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1970</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">ARPANET Reaches East Coast (MIT)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1971</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Email</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1971</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">File Transfer Protocol (FTP)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1971</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">TELNET</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1971</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">ARPANET Has 23 nodes</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1972</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Relational Database Model</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1972</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">ARPANET Has 29 nodes</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1973</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Ethernet</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1973</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">GPS Project Begins</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1973</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">SEQUEL Query Language</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1973</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">ARPANET Has 40 nodes</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1974</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">ARPANET Has 46 nodes</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1974</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Transmission Control Program (TCP)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1974</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Systems Network Architecture (SNA)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1975</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">ARPANET Has 57 Modes</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1975</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Microsoft</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1975</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Altair 8080</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1975</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">First Edition of Fred Brooks Mythical Man Month published</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1976</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Entity-Relationship Databases</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1976</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Apple</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1976</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">CYCLADES Computer Network</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1976</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">X.25 Packet Switching Protocol</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1977</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">TRS-80</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1977</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">The Department of Energy Organization Act<span class="uk-label uk-margin-small-left">Electricity</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1978</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Public Utility Regulatory Policies Act<span class="uk-label uk-margin-small-left">Electricity</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1978</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">VisiCalc</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1978</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">WordStar</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1979</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Oracle Database</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1979</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">First Commercial Cellular Network</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1979</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">dBase Desktop Database</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1980</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">USENET</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1980</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">The Staggers Rail Act<span class="uk-label uk-margin-small-left">Railroad</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1981</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">ARPANET Has 213 Nodes</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1981</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">TCP/IP</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1982</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Breakup of the Bell System<span class="uk-label uk-margin-small-left">Telecommunications</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1982</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">CDROM</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1982</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Compaq</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1982</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Simple Mail Transfer Protocol (SMTP)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1983</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">ARPANET Switches to TCP/IP</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1983</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Lotus 123</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1983</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">IPV4</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1983</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Berkely Sockets</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1984</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">CD-ROM</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1984</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Domain Name System (DNS)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1984</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Dynamic Host Configuration Protocol (DHCP)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1984</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Open Systems Interconnect (OSI)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1985</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Windows</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1985</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Dell beings assembling made to order computers</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1985</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">symbolics.com</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1985</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Whole Earth Lectronic Link (WELL)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1985</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">National Science Foundation Network (NSFNET)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1986</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">386 Computer</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1987</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Transport Layer Interface (TLI)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1987</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Microsoft Excel</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1989</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">SQL Server</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1990</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">HyperText Markup Language (HTML)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1991</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Linux</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1991</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Gopher</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1991</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Windows Sockets API</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1991</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Common Object Request Broker Architecture (CORBA)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1991</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">HyperText Markup Language (HTML) 1.0</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1992</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Energy Policy Act of 1992<span class="uk-label uk-margin-small-left">Electricity</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1992</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Open Database Connectivity (ODBC)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1992</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Microsoft Access</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1993</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Mosaic</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1993</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Common Gateway Interface (CGI)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1994</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">PHP</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1995</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">PC Gaming</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1995</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">GPS Military Operational</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1994</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Netscape Navigator</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1994</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Uniform Resource Locator (URL)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1994</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">MySQL</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1994</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Design Patterns book, by the Gang of Four published; includes axioms like Program to an interface, not an implementation</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1995</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Apache HTTP Server</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1995</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Internet Explorer</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1995</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Microsoft Internet Information Services (IIS)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1995</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">JavaScript</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1995</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">HyperText Markup Language (HTML) 2.0</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1995</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Secure Socket Shell (SSH)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1995</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Java</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1995</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Open Network Computing (ONC) Remote Procedure Call (RPC)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1996</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Telecommunications Act of 1996<span class="uk-label uk-margin-small-left">Telecommunications</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1996</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">FERC Orders 888 and 889<span class="uk-label uk-margin-small-left">Electricity</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1996</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">FERC Order 2000<span class="uk-label uk-margin-small-left">Electricity</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1996</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">HyperText Transfer Protocol (HTTP/1.0)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1996</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Active Server Pages (ASP)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1996</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">XML</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1996</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Google</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1996</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">HTTP/1.1</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1996</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Web Users Reach 36 Million</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1996</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Application Service Provider (ASP)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1997</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">802.11</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1997</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">RSS</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1998</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">XML-RPC</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1998</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">IPV6</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>1999</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">MQTT</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2000</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">REST</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2000</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Salesforce</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2000</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">SOAP</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2000</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">eBay</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2001</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Protocol Buffers</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2002</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Amazon</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2003</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Delicious</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2003</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Object Relational Mapping (ORM)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2003</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">64-Bit Processor</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2003</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">AMQP</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2003</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Google AdSense</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2004</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">NGINX</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2004</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Firefox</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2004</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Flickr</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2004</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Web Services</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2005</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">JSON-RPC</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2005</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">The 2005 Energy Policy Act<span class="uk-label uk-margin-small-left">Electricity</span></h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2005</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">ProgrammableWeb</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2005</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">YouTube</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2005</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">AdWords</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2005</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Atom</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2006</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Amazon S3</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2006</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Google Analytics</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2006</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Google Maps</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2006</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">JSON</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2006</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Facebook</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2006</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Amazon EC2</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2006</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Twitter</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2006</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Mashery</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2006</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">OAuth 1.0 (final draft released December, 2007)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2007</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">iPhone</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2007</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Twilio</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2008</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">GitHub</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2008</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Android</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2008</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Reddit</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2009</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">NoSQL</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2009</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Foursquare</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2009</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Amazon RDS</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2009</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Node.js</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2009</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Google Analytics API</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2010</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">iPad</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2010</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">SaaS</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2010</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Nest</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2010</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Instagram</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2010</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Oracle V Google API Copyright</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2010</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Swagger</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2010</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Docker</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2011</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Fitbit</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2011</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Apiary + API Blueprint</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2011</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Stripe</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2011</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Microservices</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2011</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Websockets</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2011</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Kafka</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2011</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Steve Yegge AWS Rant</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2011</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Fast Healthcare interoperability Resources (FHIR)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2012</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">President Obama Federal Government API Mandate</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2012</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">OAuth 2.0</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2012</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Twitter Quadrant Post</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2012</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">API Strategy &amp; Practice Conference</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2012</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">APIDays Conference</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2013</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Slack</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2013</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Google Reader Shutdown</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2014</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Kubernetes</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2014</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">James Lewis and Martin Fowler popularize the microservice architectural pattern</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2014</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Uber</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2014</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Postman</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2014</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Spotify</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2014</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Serverless</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2014</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">ESPN ends its public API program, signaling broader shifts in API strategies</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2015</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">OpenAPI</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2015</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">gRPC</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2015</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">JSON Web Token (JWT)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2015</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Apigee IPO</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2012</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Payment Services Directive 2 (PSD2)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2015</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">HTTP/2</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2015</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Amazon Launches AWS API Gateway</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2015</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">GraphQL</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2016</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">GDPR</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2016</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">AsyncAPI</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2016</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Amazon Alexa Voice Service</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2018</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">California Consumer Privacy Act (CCPA)</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2018</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">HTTP/3</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="tm-timeline-entry">
+        <div class="tm-timeline-time">
+            <h5>2021</h5>
+        </div>
+        <div class="tm-timeline-body">
+            <h3 class="uk-flex uk-flex-middle" style="font-size: 14px;">Oracle v Google Supreme Court Decision</h3>
+            <ul class="uk-list">
+                
+            </ul>
+        </div>
+    </div>
+    
+&lt;/div&gt;
+
+</p></div>
+
+            </div>
+
+        </article>
+
+    </div>
+</div>
+
+
+    <div id="offcanvas-docs" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        
+
+    </div>
+</div>
+
+
+    <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <a class="uk-logo uk-margin-small-bottom" href="/"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-logos/api-evangelist-logo-butterfly.png" alt="API Evangelist"></a>
+     
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+      
+        <ul class="uk-nav uk-nav-primary uk-margin-top">
+            
+                
+
+                
+
+                
+                    <li class="uk-active"><a href="/" >Home</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/docs/installation/" >Docs</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/blog/" >Blog</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><a href="/changelog-timeline/" >Changelog</a></li>
+                
+            
+                
+
+                
+
+                
+                    <li><div class="uk-navbar-item"><a class="uk-button uk-button-success" href="/contact/" >Contact</a></div></li>
+                
+            
+        </ul>
+
+        <div class="uk-margin-top uk-text-center">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+
+
+
+
+<div>
+    <a href="https://www.linkedin.com/in/kinlane/" title="LinkedIn" data-uk-icon="icon: linkedin" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+<div>
+    <a href="https://www.youtube.com/c/KinLane" title="Youtube" data-uk-icon="icon: youtube" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+<div>
+    <a href="https://github.com/api-evangelist" title="GitHub" data-uk-icon="icon: github" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
+        <footer class="uk-section uk-text-center uk-text-muted">
+    <div class="uk-container uk-container-small">
+
+        <div>
+            <ul class="uk-subnav uk-flex-center">
+                
+                    
+                    
+                    
+                        <li><a href="https://apis.io" target="_blank" >APIs.io</a></li>
+                    
+                
+                    
+                    
+                    
+                        <li><a href="https://api.specificationtoolbox.com/" target="_blank" >API Specification Toolbox</a></li>
+                    
+                
+                    
+                    
+                    
+                        <li><a href="http://kinlane.com" target="_blank" >Kin Lane</a></li>
+                    
+                
+            </ul>
+        </div>
+        <div class="uk-margin-medium">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+
+
+
+
+<div>
+    <a href="https://www.linkedin.com/in/kinlane/" title="LinkedIn" data-uk-icon="icon: linkedin" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+<div>
+    <a href="https://www.youtube.com/c/KinLane" title="Youtube" data-uk-icon="icon: youtube" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+<div>
+    <a href="https://github.com/api-evangelist" title="GitHub" data-uk-icon="icon: github" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+
+
+
+            </div>
+        </div>
+        <div class="uk-margin-medium uk-text-small copyright link-secondary">API Evangelist</div>
+
+    </div>
+</footer>
+
+    
+
+    
+
+    
+
+    </body>
+
+</html>
