@@ -1,6 +1,4 @@
-# API Evangelist
+# Timeline
+This is our repository for building the timeline we use across our stories.
 
-This is my blog for making sense of the technology, business, and politics of APIs. It all runs here on Github, so feel free to submit any pull requests of changes you'd like to see.
-
-- URL: http://apievangelist.com
-- Twitter: @apievangelist
+- URL: https://timeline.kinlane.com/
